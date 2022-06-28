@@ -1,0 +1,7 @@
+{
+    "data":[
+        { "name": "rice", "quantity": "2kg" },
+        { "name": "wheat", "quantity": "1kg" },
+        { "name": "milk", "quantity": "3kg" }
+      ]
+}

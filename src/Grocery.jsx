@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import GroceryInput from "./GroceryInput";
 import GroceryList from "./GroceryList";
 
 export default function Grocery() {
-  let data = [
-    { name: "rice", quantity: "2kg" },
-    { name: "wheat", quantity: "1kg" },
-    { name: "milk", quantity: "3kg" },
-  ];
-  const [list, setList] = useState(data);
+
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+  fetch("http://localhost:5050/data").then(res=>res.json()).then(data=>setList(data))
+   
+  }, [])
+  
   return (
     <div>
       <GroceryList list={list} setList={setList} />
